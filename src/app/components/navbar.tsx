@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -69,7 +70,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "About", link: "#aboutme", id: 0 },
-    { name: "Skill", link: "#skill", id: 1 },
+    { name: "Skills", link: "#skill", id: 1 },
     { name: "Services", link: "#services", id: 2 },
     { name: "Pricing", link: "#pricing", id: 3 },
     { name: "Contact", link: "#contact", id: 4 },
@@ -162,7 +163,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.1 }}
-          className="fixed top-4 left-4 p-3 rounded-full shadow-[#6c63ff] shadow-md text-white shadow-lg z-50"
+          className="fixed top-4 left-4 p-3 rounded-full shadow-[#6c63ff] shadow-sm text-white  z-50"
           onClick={() => setIsNavVisible(true)}
         >
          <svg

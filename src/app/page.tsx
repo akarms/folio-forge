@@ -1,5 +1,6 @@
 'use client'
 import Aboutme from "./components/aboutme";
+import Skills from "./components/skills";
 import Navbar from "./components/navbar";
 
 
@@ -14,7 +15,7 @@ export default function Home() {
         <Aboutme />
       </div>
       <div id="skill">
-        <Aboutme />
+        <Skills />
       </div>
     </div>
   );
