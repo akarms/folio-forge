@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(true);
-  const [selectedItem, setSelectedItem] = useState(0);
   const [isMediumScreen, setIsMediumScreen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +70,7 @@ const Navbar = () => {
   const menuItems = [
     { name: "About", link: "#aboutme", id: 0 },
     { name: "Skills", link: "#skill", id: 1 },
-    { name: "Services", link: "#services", id: 2 },
+    { name: "Projects", link: "#projects", id: 2 },
     { name: "Pricing", link: "#pricing", id: 3 },
     { name: "Contact", link: "#contact", id: 4 },
   ];
@@ -136,14 +135,9 @@ const Navbar = () => {
                 >
                   <a
                     href={item.link}
-                    className={`${
-                      item.id === selectedItem
-                        ? "block text-[#0381a3] md:bg-transparent"
-                        : "block text-white rounded md:hover:bg-transparent md:hover:text-blue-700"
-                    } p-4`}
+                    className={`block text-white rounded md:hover:bg-transparent md:hover:text-blue-700 p-4`}
                     onClick={(e) => {
                       e.preventDefault(); // Prevent default anchor behavior
-                      setSelectedItem(item.id);
                       handleScroll(item.link);
                     }}
                   >

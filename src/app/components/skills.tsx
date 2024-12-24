@@ -6,7 +6,7 @@ import { BackgroundGradient } from "./ui/background-gradient";
 
 const Skills = () => {
   return (
-    <div className="grid p-10 h-auto pt-28  md:pt-8 md:p-28 xl:p-32 ">
+    <div className="grid p-10 h-[3040px] sm:h-auto pt-28  md:pt-8 md:p-28 xl:p-32 ">
       <span
         className="text-white text-7xl text-center"
         style={{ fontFamily: "Preahvihear Regular" }}
@@ -37,7 +37,7 @@ const Skills = () => {
         }}
       >
         <Grid size={{ sm: 12, lg: 6 }}>
-          <BackgroundGradient className="rounded-[22px] p-2 bg-black lg:h-80">
+          <BackgroundGradient className="rounded-[22px] p-2 bg-black lg:h-80  w-full">
             <div className="flex flex-row justify-center p-2 w-full pb-10">
               <span
                 className="text-[#f8f8f8] text-lg"
@@ -93,8 +93,8 @@ const Skills = () => {
         </Grid>
 
         <Grid size={{ sm: 12, lg: 6 }}>
-          <BackgroundGradient className="rounded-[22px]  p-2 bg-black lg:h-80">
-            <div className="flex flex-row justify-center p-2 w-full pb-10">
+          <BackgroundGradient className="rounded-[22px]  p-2 bg-black lg:h-80 ">
+            <div className="flex flex-row justify-center p-2 w-full xl:pb-10 lg:pb-30">
               <span
                 className="text-[#f8f8f8] text-lg"
                 style={{ fontFamily: "Preahvihear Regular" }}
@@ -270,8 +270,12 @@ const Skills = () => {
           </BackgroundGradient>
         </Grid>
 
-        <Grid size={{ sm: 12, lg: 6 }}>
-          <BackgroundGradient className="rounded-[22px] p-2 bg-black lg:h-80">
+        <Grid size={{ sm: 12, lg: 6 }}
+        sx={{
+            width: "100%",
+        }}
+        >
+          <BackgroundGradient className="rounded-[22px] p-2 bg-black lg:h-80 ">
             <div className="flex flex-row justify-center p-2 w-full pb-10">
               <span
                 className="text-[#f8f8f8] text-lg"
