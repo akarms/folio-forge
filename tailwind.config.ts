@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Config } from "tailwindcss";
 import plugin from 'tailwindcss/plugin';
 
+/** @type {import('tailwindcss').Config} */
 
 export default {
     content: [
@@ -24,7 +26,14 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+      boxShadow: {
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 
+                0px 1px 0px 0px rgba(25,28,33,0.02), 
+                0px 0px 0px 1px rgba(25,28,33,0.08)`,
+        "hover-div": `0px 4px 6px rgba(0, 0, 0, 0.1), 
+                      0px 2px 4px rgba(0, 0, 0, 0.6)`, // Optional shadow for hover
+      },
   	}
   },
   plugins: [
@@ -48,5 +57,16 @@ export default {
         },
       });
     }), 
+
+    function addVariablesForColors({ addBase, theme }: { addBase: (styles: Record<string, any>) => void, theme: (path: string) => string }) {
+      addBase({
+        ":root": {
+          "--blue-500": theme("colors.blue.500"),
+        },
+      });
+    },
+
+
+
   ],
 } satisfies Config;

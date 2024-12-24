@@ -16,7 +16,7 @@ const Aboutme = () => {
         <Grid
           size={{ sm: 12, md: 6 }}
           sx={{
-            pl: { xs: 10, sm: 20, md: 30 },
+            pl: { xs: 0, sm: 20, md: 30 },
           }}
         >
           <div className="relative mb-24 p-10 items-center">
