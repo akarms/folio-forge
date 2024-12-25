@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, TargetAndTransition } from "framer-motion";
@@ -40,15 +41,15 @@ const AnimateOnScroll = ({
   }, [triggerOnce]);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }} // Start invisible and slightly below
-      animate={isVisible ? animation || { opacity: 1, y: 0 } : undefined} // Use undefined if no animation needed
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+<motion.div
+  ref={ref}
+  initial={{ opacity: 0, y: 50 }}
+  animate={isVisible ? animation || { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  className={className}
+>
+  {children}
+</motion.div>
   );
 };
 

@@ -71,8 +71,8 @@ const Navbar = () => {
     { name: "About", link: "#aboutme", id: 0 },
     { name: "Skills", link: "#skill", id: 1 },
     { name: "Projects", link: "#projects", id: 2 },
-    { name: "Pricing", link: "#pricing", id: 3 },
-    { name: "Contact", link: "#contact", id: 4 },
+    { name: "Education", link: "#education", id: 3 },
+    { name: "Contact Me", link: "#contact", id: 4 },
   ];
 
   return (
@@ -128,14 +128,14 @@ const Navbar = () => {
                 <motion.li
                   key={index}
                   whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileTap={{ scale: 0.7 }}
                   transition={{ duration: 0.1 }}
                   className="transition duration-300"
                   style={{ fontFamily: "Preahvihear Regular" }}
                 >
                   <a
                     href={item.link}
-                    className={`block text-white rounded md:hover:bg-transparent md:hover:text-blue-700 p-4`}
+                    className={`block text-white rounded md:hover:bg-transparent md:hover:text-[#02f7a6] p-4`}
                     onClick={(e) => {
                       e.preventDefault(); // Prevent default anchor behavior
                       handleScroll(item.link);
