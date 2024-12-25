@@ -5,11 +5,9 @@ const nextConfig: NextConfig = {
     domains: [
       "api.microlink.io", // Microlink Image Preview
     ],
-    unoptimized: true, // Required for static export if you're using the `next/image` component
+    unoptimized: true, // Required for static export with next/image
   },
   output: "export",
-  basePath: "/folio-forge", // Add your repository name here
-  assetPrefix: "/folio-forge", // Add your repository name here
 };
 
-module.exports = nextConfig;
+export default nextConfig;
