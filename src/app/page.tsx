@@ -7,11 +7,18 @@ import Projects2 from "./components/projects2";
 import Education from "./components/education";
 import Contact from "./components/contact";
 import AnimateOnScroll from "./components/ui/scrollAnimation";
+import Footer from "./components/footer";
+//import { FollowerPointerCard } from "./components/ui/following-pointer";
+
+
 
 
 export default function Home() {
   return (
     <div>
+      {/* <FollowerPointerCard > */}
+       
+     
       {/* Navigation Menu */}
       <Navbar />
 
@@ -46,6 +53,8 @@ export default function Home() {
           <Contact />
         </div>
       </AnimateOnScroll>
+      <Footer/>
+      {/* </FollowerPointerCard> */}
       
     </div>
   );

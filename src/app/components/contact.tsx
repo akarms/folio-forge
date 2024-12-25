@@ -8,8 +8,6 @@ import Grid from "@mui/material/Grid2";
 import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import { motion } from "framer-motion";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../../firebase";
 import CircularProgress from "@mui/material/CircularProgress";
 import Snackbar from '@mui/material/Snackbar';
 
@@ -45,6 +43,7 @@ const Contact = () => {
   });
 
   const [status, setStatus] = useState("");
+  const access_key = process.env.access_key
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -53,24 +52,38 @@ const Contact = () => {
     setFormData({ ...formData, [target.id]: target.value });
   };
 
-  //   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //     e.preventDefault();
-  //     console.log("Form submitted");
-  //   };
+  const data = {
+    access_key: access_key, 
+    name: formData.fullName,
+    email: formData.email,
+    message: formData.message,
+  };
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("Sending...");
-
     try {
-      // Save message to Firestore
-      await addDoc(collection(db, "contactMessages"), formData);
-      setStatus("Message sent successfully!");
-      setFormData({ fullName: "", email: "", message: "" }); // Clear form
-    } catch (error) {
-      console.error("Error saving message: ", error);
-      setStatus("Failed to send message. Try again.");
-    }
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+    
+        const result = await response.json();
+    
+        if (result.success) {
+          setStatus("Message sent successfully!");
+          setFormData({ fullName: "", email: "", message: "" }); // Reset the form
+        } else {
+          setStatus("Failed to send message. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setStatus("Failed to send message. Please try again.");
+      }
   };
 
   return (
