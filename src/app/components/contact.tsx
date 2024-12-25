@@ -43,7 +43,7 @@ const Contact = () => {
   });
 
   const [status, setStatus] = useState("");
-  const access_key = process.env.access_key
+  const access_key = "2bcdab4e-0709-426e-ae09-2083d2e9895a"
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
