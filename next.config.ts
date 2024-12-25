@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
       "api.microlink.io", // Microlink Image Preview
     ],
   },
+  output:`export`,
 };
 
-export default nextConfig;
+module.exports = nextConfig;
