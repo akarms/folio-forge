@@ -25,7 +25,7 @@ const Footer = () => {
       icon: (
         <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "www.linkedin.com/in/akar-ahamedh",
+      href: "https://www.linkedin.com/in/akar-ahamedh/",
     },
     {
       title: "Hackerrank",
